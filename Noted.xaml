@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Noted.Noted"
+             Title="Noted">
+
+    <StackLayout>
+
+        <Label  Text="Welcome to your personal Notes you fucking FAGGOT"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+        <DatePicker x:Name="datePicker"
+                    HorizontalOptions="Center" />
+
+        <Entry x:Name="task"
+               Placeholder="Enter task"
+               TextChanged="OnEntryTextChanged"
+               Completed="OnEntryCompleted"
+               Keyboard="Text"/>
+
+        <ListView 
+            x:Name="lista"
+            VerticalScrollBarVisibility="Default" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding description}"
+                              Detail="{Binding date}"></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>
